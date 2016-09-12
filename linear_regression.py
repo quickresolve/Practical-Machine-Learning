@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 # Dataframe - get datasets (ticker) from Quandl.com to work with
 df = quandl.get('WIKI/GOOGL')
 
-print(df.head())
+# print(df.head())
 # allows you to see all features of this dataset in the terminal
 
 
@@ -34,7 +34,6 @@ forecast_out = int(math.ceil(0.01*len(df)))
 df['label'] = df[forecast_col].shift(-forecast_out)
 # df.dropna(inplace=True)
 # print(df.head())
-
 
 X = np.array(df.drop(['label'],1))
 # features
